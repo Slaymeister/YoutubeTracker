@@ -73,10 +73,11 @@ function checkNewYoutube() {
     Logger.log ("myPastDate: "+myPastDate);
 
     for (var i = 0, l = myChannels.length; i < l; i++){
-      var searchName = myChannels[i][0];
-      var myChannelID = myChannels[i][1];
-      var myChannelFilter = myChannels[i][2];
-      var myWebHook = myChannels[i][3];
+      //source spreadsheet uses following fields.  No header row.
+      var searchName = myChannels[i][0]; //friendly name used when pushing message to webhook
+      var myChannelID = myChannels[i][1]; //found by selecting channel homepage, https://www.youtube.com/channel/[myChannelID]
+      var myChannelFilter = myChannels[i][2]; //text filter. If blank, then 5 newest videos on channel in past rewindHours will be returned.
+      var myWebHook = myChannels[i][3]; //webhook address.  Can be different for each channel
       Logger.log ("searchName: "+searchName+"; myChannelID: "+myChannelID+"; myChannelFilter: "+myChannelFilter);
     //if (myChannelID == "UCpa-Zb0ZcQjTCPP1Dx_1M8Q") { //channel screen to protect quota during testing begin
 
